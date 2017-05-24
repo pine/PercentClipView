@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PercentClipView">
+        <attr name="clipLeft" format="float" />
+        <attr name="clipTop" format="float" />
+        <attr name="clipRight" format="float" />
+        <attr name="clipBottom" format="float" />
+    </declare-styleable>
+</resources>
