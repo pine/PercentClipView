@@ -47,15 +47,31 @@ public class LinearLayout extends android.widget.LinearLayout {
         this.helper.setClipLeft(clipLeft);
     }
 
+    public float getClipLeft() {
+        return this.helper.getClipLeft();
+    }
+
     public void setClipTop(float clipTop) {
         this.helper.setClipTop(clipTop);
+    }
+
+    public float getClipTop() {
+        return this.helper.getClipTop();
     }
 
     public void setClipRight(float clipRight) {
         this.helper.setClipRight(clipRight);
     }
 
+    public float getClipRight() {
+        return this.helper.getClipRight();
+    }
+
     public void setClipBottom(float clipBottom) {
         this.helper.setClipBottom(clipBottom);
+    }
+
+    public float getClipBottom() {
+        return this.helper.getClipBottom();
     }
 }

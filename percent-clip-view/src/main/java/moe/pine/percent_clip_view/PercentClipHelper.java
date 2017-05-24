@@ -150,9 +150,17 @@ class PercentClipHelper {
         this.view.invalidate();
     }
 
+    float getClipLeft() {
+        return this.params.left;
+    }
+
     void setClipTop(float clipTop) {
         this.params.top = clipTop;
         this.view.invalidate();
+    }
+
+    float getClipTop() {
+        return this.params.top;
     }
 
     void setClipRight(float clipRight) {
@@ -160,8 +168,16 @@ class PercentClipHelper {
         this.view.invalidate();
     }
 
+    float getClipRight() {
+        return this.params.right;
+    }
+
     void setClipBottom(float clipBottom) {
         this.params.bottom = clipBottom;
         this.view.invalidate();
+    }
+
+    float getClipBottom() {
+        return this.params.bottom;
     }
 }
