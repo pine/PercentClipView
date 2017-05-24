@@ -14,11 +14,11 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * ClipHelper
+ * PercentClipHelper
  * Created by pine on May 24, 2017.
  */
 
-class ClipHelper {
+class PercentClipHelper {
     static final class ClipParams {
         float left;
         float top;
@@ -61,6 +61,9 @@ class ClipHelper {
     }
 
     @NonNull
+    private final View view;
+
+    @NonNull
     private final ClipParams params;
 
     @NonNull
@@ -81,7 +84,8 @@ class ClipHelper {
     @Nullable
     private ClipParams maskParams;
 
-    ClipHelper(@NonNull View view, @Nullable AttributeSet attrs) {
+    PercentClipHelper(@NonNull View view, @Nullable AttributeSet attrs) {
+        this.view = view;
         this.params = new ClipParams(view.getContext(), attrs);
         this.paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         this.maskPaint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.FILTER_BITMAP_FLAG);
@@ -93,18 +97,18 @@ class ClipHelper {
         this.offscreenBitmap = Bitmap.createBitmap(canvas.getWidth(), canvas.getHeight(), Bitmap.Config.ARGB_8888);
         this.offscreenCanvas = new Canvas(this.offscreenBitmap);
 
-
         int width = canvas.getWidth();
         int height = canvas.getHeight();
-        /*
+
         boolean isEmpty = this.maskBitmap == null || this.maskParams == null;
         boolean isSizeChanged = !isEmpty && (this.maskBitmap.getWidth() != width || this.maskBitmap.getHeight() != height);
         boolean isParamsChanged = !isEmpty && !this.maskParams.equals(this.params);
-*/
-        //if (isEmpty || isSizeChanged || isParamsChanged) {
+
+        // Cache mask bitmap
+        if (isEmpty || isSizeChanged || isParamsChanged) {
             this.maskBitmap = this.createMask(width, height);
             this.maskParams = this.params;
-        //}
+        }
     }
 
     void draw(Canvas canvas) {
@@ -125,14 +129,39 @@ class ClipHelper {
         paint.setColor(Color.WHITE);
         canvas.drawRect(0, 0, width, height, paint);
 
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        canvas.drawRect(0, 0, width, height, paint);
+        if (this.params.left + this.params.right >= 1) return mask;
+        if (this.params.top + this.params.bottom >= 1) return mask;
 
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+        canvas.drawRect(
+                width * this.params.left, height * this.params.top,
+                width * (1f - this.params.right), height * (1f - this.params.bottom),
+                paint);
         return mask;
     }
 
     @Nullable
     Canvas getOffscreenCanvas() {
         return offscreenCanvas;
+    }
+
+    void setClipLeft(float clipLeft) {
+        this.params.left = clipLeft;
+        this.view.invalidate();
+    }
+
+    void setClipTop(float clipTop) {
+        this.params.top = clipTop;
+        this.view.invalidate();
+    }
+
+    void setClipRight(float clipRight) {
+        this.params.right = clipRight;
+        this.view.invalidate();
+    }
+
+    void setClipBottom(float clipBottom) {
+        this.params.bottom = clipBottom;
+        this.view.invalidate();
     }
 }
