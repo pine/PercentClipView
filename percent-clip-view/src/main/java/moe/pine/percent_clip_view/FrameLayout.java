@@ -7,31 +7,31 @@ import android.os.Build;
 import android.util.AttributeSet;
 
 /**
- * LinearLayout
+ * FrameLayout
  * Created by pine on May 24, 2017.
  */
 
-public class LinearLayout extends android.widget.LinearLayout {
+public class FrameLayout extends android.widget.FrameLayout {
     private final PercentClipHelper helper;
 
-    public LinearLayout(Context context) {
+    public FrameLayout(Context context) {
         super(context);
         this.helper = new PercentClipHelper(this, null);
     }
 
-    public LinearLayout(Context context, AttributeSet attrs) {
+    public FrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.helper = new PercentClipHelper(this, attrs);
     }
 
-    public LinearLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public FrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.helper = new PercentClipHelper(this, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @SuppressWarnings("unused")
-    public LinearLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public FrameLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         this.helper = new PercentClipHelper(this, attrs);
     }

@@ -7,31 +7,31 @@ import android.os.Build;
 import android.util.AttributeSet;
 
 /**
- * LinearLayout
+ * RelativeLayout
  * Created by pine on May 24, 2017.
  */
 
-public class LinearLayout extends android.widget.LinearLayout {
+public class RelativeLayout extends android.widget.FrameLayout {
     private final PercentClipHelper helper;
 
-    public LinearLayout(Context context) {
+    public RelativeLayout(Context context) {
         super(context);
         this.helper = new PercentClipHelper(this, null);
     }
 
-    public LinearLayout(Context context, AttributeSet attrs) {
+    public RelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.helper = new PercentClipHelper(this, attrs);
     }
 
-    public LinearLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+    public RelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.helper = new PercentClipHelper(this, attrs);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @SuppressWarnings("unused")
-    public LinearLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public RelativeLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         this.helper = new PercentClipHelper(this, attrs);
     }
