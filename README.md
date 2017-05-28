@@ -1,4 +1,4 @@
-## PercentClipView
+## PercentClipView &nbsp;[![Build Status](https://travis-ci.org/pine/PercentClipView.svg?branch=master)](https://travis-ci.org/pine/PercentClipView)
 
 :star: Cropped layouts with percentage for Android
 
