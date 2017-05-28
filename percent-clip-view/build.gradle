@@ -1,4 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven-publish'
+
+version = '0.1.0'
 
 android {
     compileSdkVersion 25
@@ -30,3 +34,5 @@ dependencies {
     })
     testCompile 'junit:junit:4.12'
 }
+
+apply from: "${rootProject.projectDir}/gradle/bintray.gradle"
