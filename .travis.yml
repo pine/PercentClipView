@@ -1,17 +1,14 @@
 language: android
-sudo: false
-
+jdk:
+  - oraclejdk8
 env:
   - GRADLE_OPTS="-Xmx512m -XX:MaxPermSize=512m"
 
-jdk:
-  - oraclejdk8
-
 android:
   components:
-    - android-25
+    - tools
     - build-tools-25.0.3
-    - extra-android-m2repository
+    - android-25
 
   licenses:
     - android-sdk-license-.+
