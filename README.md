@@ -1,6 +1,6 @@
 ## PercentClipView
 
-Cropped layouts with percentage for Android
+:star: Cropped layouts with percentage for Android
 
 <img src="example.png" width="270" height="480">
 
