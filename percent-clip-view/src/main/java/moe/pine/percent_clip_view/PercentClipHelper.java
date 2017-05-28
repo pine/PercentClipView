@@ -70,7 +70,7 @@ final class PercentClipHelper {
 
     void draw(Canvas canvas) {
         if (this.offscreenCanvas == null || this.offscreenBitmap == null || this.maskBitmap == null) {
-            throw new IllegalStateException();
+            throw new IllegalStateException("not initialized");
         }
 
         this.offscreenCanvas.drawBitmap(this.maskBitmap, 0f, 0f, this.maskPaint);
