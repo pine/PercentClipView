@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -8,7 +9,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="moe.pine.percent_clip_view.example.MainActivity">
 
     <LinearLayout
@@ -34,5 +34,44 @@
 
             <include layout="@layout/view_horizontal_stars" />
         </moe.pine.percent_clip_view.LinearLayout>
+
+        <moe.pine.percent_clip_view.FrameLayout
+            android:id="@+id/frame_layout_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:clipRight="0.40">
+
+            <include layout="@layout/view_horizontal_stars" />
+        </moe.pine.percent_clip_view.FrameLayout>
+
+        <moe.pine.percent_clip_view.FrameLayout
+            android:id="@+id/frame_layout_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/view_horizontal_stars" />
+        </moe.pine.percent_clip_view.FrameLayout>
+
+        <moe.pine.percent_clip_view.RelativeLayout
+            android:id="@+id/relative_layout_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:clipRight="0.10">
+
+            <include layout="@layout/view_horizontal_stars" />
+        </moe.pine.percent_clip_view.RelativeLayout>
+
+        <moe.pine.percent_clip_view.RelativeLayout
+            android:id="@+id/relative_layout_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include layout="@layout/view_horizontal_stars" />
+        </moe.pine.percent_clip_view.RelativeLayout>
+
     </LinearLayout>
 </ScrollView>

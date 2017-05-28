@@ -8,8 +8,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.setTitle(R.string.app_title)
         this.setContentView(R.layout.activity_main)
 
-        this.linear_layout_2.setClipLeft(0.20f)
+        this.linear_layout_2.clipLeft = 0.20f
+        this.frame_layout_2.clipTop = 0.50f
+        this.relative_layout_2.clipBottom = 0.50f
+
     }
 }
