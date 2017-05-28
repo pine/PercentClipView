@@ -1,7 +1,22 @@
 ## PercentClipView
 
+Cropped layouts with percentage for Android
+
 <img src="example.png" width="270" height="480">
 
+
+## Getting Started
+Please type it in your build.gradle file.
+
+```groovy
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'moe.pine:percent_clip_view:0.1.0'
+}
+```
 
 ## Acknowledgements
 
