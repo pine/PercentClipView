@@ -1,6 +1,10 @@
 language: android
 jdk:
   - oraclejdk8
+addons:
+  apt:
+    packages:
+      - lynx
 env:
   - GRADLE_OPTS="-Xmx512m -XX:MaxPermSize=512m"
 
@@ -15,3 +19,9 @@ android:
 
 script:
   - ./gradlew clean build
+
+after_failure:
+  - |
+      if [ -f "$TRAVIS_BUILD_DIR/percent-clip-view/build/reports/lint-results.html" ]; then
+        lynx -dump "$TRAVIS_BUILD_DIR/app/build/reports/lint-results.html
+      fi
