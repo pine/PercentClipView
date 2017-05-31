@@ -23,5 +23,5 @@ script:
 after_failure:
   - |
       if [ -f "$TRAVIS_BUILD_DIR/percent-clip-view/build/reports/lint-results.html" ]; then
-        lynx -dump "$TRAVIS_BUILD_DIR/app/build/reports/lint-results.html"
+        lynx -dump "$TRAVIS_BUILD_DIR/percent-clip-view/build/reports/lint-results.html"
       fi
