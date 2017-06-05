@@ -67,6 +67,12 @@ dependencies {
 - clipBottom
 - clipLeft
 
+## Upload to Bintray
+
+```
+$ ./gradlew clean assemble bintrayUpload
+```
+
 ## Acknowledgements
 
 - [@mattak](https://github.com/mattak) I referred his [ClipView](https://github.com/mattak/ClipView)
