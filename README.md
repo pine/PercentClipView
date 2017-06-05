@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    compile 'moe.pine:percent_clip_view:0.1.0'
+    compile 'moe.pine:percent_clip_view:0.1.2'
 }
 ```
 

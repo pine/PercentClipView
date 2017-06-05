@@ -3,7 +3,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
 group 'moe.pine'
-version '0.1.0'
+version '0.1.2'
 
 android {
     compileSdkVersion 25
