@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<moe.pine.percent_clip_view.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:clipBottom="0.500"
+    app:clipLeft="0.750"
+    app:clipRight="0.250"
+    app:clipTop="0.125" />
+
