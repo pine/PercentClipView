@@ -4,6 +4,10 @@
 
 <img src="example.png" width="270" height="480">
 
+## Requirements
+
+- Android 4.0.3 (API Level 15) or later
+
 ## Getting Started
 Please type it in your build.gradle file.
 
