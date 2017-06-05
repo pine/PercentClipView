@@ -18,9 +18,11 @@ dependencies {
 ```
 
 ## Usage
+You can use they layouts in XML:
 
 ```xml
 <moe.pine.percent_clip_view.LinearLayout
+    android:id="@+id/layout"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -51,6 +53,13 @@ dependencies {
         android:layout_height="wrap_content"
         android:src="@drawable/star" />
 </moe.pine.percent_clip_view.LinearLayout>
+```
+
+And, they have getters and setters:
+
+```java
+LinearLayout layout = (LinearLayout) this.findViewById(R.id.layout);
+layout.setClipLeft(0.50f);
 ```
 
 ## Reference
