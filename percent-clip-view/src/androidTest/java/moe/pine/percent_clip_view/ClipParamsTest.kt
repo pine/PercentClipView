@@ -27,7 +27,7 @@ class ClipParamsTest {
     fun constructorTest() {
         val activity = activityTestRule.activity
         val parent = activity.layoutInflater.inflate(R.layout.clip_view, null, false)
-        val view = parent.findViewById(R.id.layout) as LinearLayout
+        val view = parent.findViewById<LinearLayout>(R.id.layout)
 
         Assert.assertEquals(view.clipTop, 0.125f, DELTA)
         Assert.assertEquals(view.clipRight, 0.250f, DELTA)
