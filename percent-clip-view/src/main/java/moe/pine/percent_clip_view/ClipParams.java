@@ -11,7 +11,7 @@ import android.util.AttributeSet;
  * Created by pine on 2017/05/28.
  */
 
-final class ClipParams {
+final class ClipParams implements Cloneable {
     float left;
     float top;
     float right;
@@ -49,5 +49,14 @@ final class ClipParams {
         result = 31 * result + (right != +0.0f ? Float.floatToIntBits(right) : 0);
         result = 31 * result + (bottom != +0.0f ? Float.floatToIntBits(bottom) : 0);
         return result;
+    }
+
+    @Override
+    protected ClipParams clone() {
+        try {
+            return (ClipParams) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }
