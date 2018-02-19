@@ -64,7 +64,7 @@ final class PercentClipHelper {
         // Cache mask bitmap
         if (isEmpty || isSizeChanged || isParamsChanged) {
             this.maskBitmap = this.createMask(width, height);
-            this.maskParams = this.params;
+            this.maskParams = this.params.clone();
         }
     }
 
