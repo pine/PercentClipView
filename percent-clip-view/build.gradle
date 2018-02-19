@@ -7,12 +7,12 @@ group 'moe.pine'
 version '0.1.2'
 
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -28,12 +28,12 @@ android {
 }
 
 dependencies {
-    compile "com.android.support:support-annotations:$support_library_version"
+    compile "com.android.support:support-annotations:${rootProject.ext.supportLibraryVersion}"
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    androidTestCompile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    androidTestCompile "org.jetbrains.kotlin:kotlin-stdlib-jre7:${rootProject.ext.kotlinVersion}"
 }
 
 apply from: "${rootProject.projectDir}/gradle/bintray.gradle"
