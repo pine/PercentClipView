@@ -17,9 +17,6 @@ android:
     - android-27
     - sys-img-armeabi-v7a-android-22
 
-  licenses:
-    - android-sdk-license-.+
-
 before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
   - emulator -avd test -no-audio -no-window &
